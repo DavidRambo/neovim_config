@@ -1,0 +1,81 @@
+return require('packer').startup(
+    function(use)
+        -- packer can manage itself
+        use 'wbthomason/packer.nvim'
+
+        -- colorschemes
+        use 'navarasu/onedark.nvim'
+        use 'NTBBloodbath/doom-one.nvim'
+
+        -- icons
+        use 'kyazdani42/nvim-web-devicons'
+
+        -- lualine modeline
+        use {
+            'nvim-lualine/lualine.nvim',
+            requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        }
+
+        -- NeoVim Tree
+        use {
+            'nvim-tree/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            },
+            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
+
+        -- TreeSitter
+        use {
+            'nvim-treesitter/nvim-treesitter',
+            run = ':TSUpdate'
+        }
+
+        -- fuzzy finder written in lua
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.0',
+            -- or                            , branch = '0.1.x',
+            requires = { { 'nvim-lua/plenary.nvim' } }
+        }
+
+        -- Autopairs
+        use {
+            "windwp/nvim-autopairs",
+            config = function() require("nvim-autopairs").setup {} end
+        }
+        -- Surround
+        use({
+            "kylechui/nvim-surround",
+            tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+            config = function()
+                require("nvim-surround").setup({
+                    -- Configuration here, or leave empty to use defaults
+                })
+            end
+        })
+
+        -- gc(c) to comment
+        use 'tpope/vim-commentary'
+
+        -- LSP Install and Configuration
+        use({
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
+            "mfussenegger/nvim-dap",
+            "mhartington/formatter.nvim",
+        })
+
+        -- Completion
+        use {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            -- "hrsh7th/cmp-cmdline",
+            "hrsh7th/nvim-cmp",
+            -- luasnip
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip"
+        }
+
+    end)
