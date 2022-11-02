@@ -1,5 +1,4 @@
 require("user.set")
 require("user.keymap")
 require("user.plugins")
--- require("user.colorscheme")
 require("user.colors.onedark")

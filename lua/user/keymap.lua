@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', '<Down>', "v:count == 0 ? 'g<Down>' : '<Down>'",
 n_remap(' fs', ':w<CR>')
 
 -- toggle nvim-tree
-n_remap('<leader>T', ':NvimTreeToggle<CR>')
+n_remap('<leader>e', ':NvimTreeToggle<CR>')
 
 -- Emacs Home and End bindings
 i_remap('<C-a>', '<ESC>I')
@@ -42,9 +42,9 @@ n_remap('<leader>bk', '<cmd>bd<CR>')
 n_remap(' c', ':close<CR>')
 
 -- Tabs
-n_remap('<leader>t', ':tabnew<CR>')
-n_remap('<leader>h', ':tabp<CR>')
-n_remap('<leader>o', ':tabn<CR>')
+n_remap('<leader>tn', ':tabnew<CR>')
+n_remap('<leader>th', ':tabp<CR>')
+n_remap('<leader>to', ':tabn<CR>')
 
 -- Windows
 n_remap("<leader>wv", "<C-w>v")
@@ -62,4 +62,4 @@ vim.keymap.set('n', '<leader>sp', builtin.live_grep, {})
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_ind, {})
 
 -- Formatter --
-n_remap('<leader>F', ':Format<CR>')
+-- n_remap('<leader>F', ':Format<CR>')
