@@ -50,7 +50,7 @@ return require('packer').startup(
         }
 
         -- fuzzy finder written in lua
-        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
         use {
             'nvim-telescope/telescope.nvim', tag = '0.1.0',
             -- or                            , branch = '0.1.x',
@@ -94,7 +94,8 @@ return require('packer').startup(
             "hrsh7th/nvim-cmp",
             -- luasnip
             "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip"
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets"
         }
 
     end)
