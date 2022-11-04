@@ -85,6 +85,10 @@ return require('packer').startup(
             "mhartington/formatter.nvim",
         })
 
+        -- improved UI
+        use({ 'glepnir/lspsaga.nvim', branch = "main" })
+        use("onsails/lspkind.nvim")
+
         -- Completion
         use {
             "hrsh7th/cmp-nvim-lsp",

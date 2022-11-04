@@ -1,26 +1,39 @@
--- Mason for handling LSP installation
-require("mason").setup()
-require("mason-lspconfig").setup()
-
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-capabilities = capabilities
+local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
+if not lspconfig_status then
+    return
+end
 
-local on_attach = function()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
-    vim.keymap.set("n", " dn", vim.diagnostic.goto_next, { buffer = 0 })
-    vim.keymap.set("n", " dp", vim.diagnostic.goto_prev, { buffer = 0 })
-    vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<CR>", { buffer = 0 })
-    vim.keymap.set("n", " r", vim.lsp.buf.rename, { buffer = 0 })
+local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not cmp_nvim_lsp_status then
+    return
+end
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+-- enable keybindings for lsp server
+local on_attach = function(client, bufnr)
+    local opts = { noremap = true, silent = true, buffer = bufnr }
+
+    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+    vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", " dh", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+    vim.keymap.set("n", " d]", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+    vim.keymap.set("n", " d[", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+    vim.keymap.set("n", " dn", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", " dp", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<CR>", opts)
+    vim.keymap.set("n", " rn", "<cmd>Lspsaga rename<CR>", opts)
 end
 
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
-require("lspconfig").sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         Lua = {
@@ -29,64 +42,37 @@ require("lspconfig").sumneko_lua.setup {
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
+                -- library = vim.api.nvim_get_runtime_file("", true),
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.stdpath("config") .. "/lua"] = true,
+                }
             },
         }
     }
 }
-require("lspconfig").clangd.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
--- require("lspconfig").pyright.setup {
---     on_attach = on_attach,
--- }
-require("lspconfig").pylsp.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
-require("lspconfig").sqlls.setup {
+
+lspconfig["clangd"].setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
 
--- Setup nvim-cmp
-local cmp_status, cmp = pcall(require, "cmp")
-if not cmp_status then
-    return
-end
+lspconfig["pyright"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
-    return
-end
+lspconfig["pylsp"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 
-require("luasnip/loaders/from_vscode").lazy_load()
+lspconfig.sqlls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
 
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    window = {
-        -- completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-.>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-    }),
-    -- {
-    --     { name = 'buffer' }
-    -- },
+lspconfig["html"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
 })
