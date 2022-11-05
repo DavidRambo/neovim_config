@@ -102,4 +102,7 @@ return require('packer').startup(
             "rafamadriz/friendly-snippets"
         }
 
+        -- tab out of those pairs!
+        use 'abecodes/tabout.nvim'
+
     end)
