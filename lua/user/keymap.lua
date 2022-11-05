@@ -37,7 +37,7 @@ i_remap('<C-e>', '<ESC>A')
 n_remap('<leader>bn', '<cmd>bnext<CR>')
 n_remap('<leader>bp', '<cmd>bprevious<CR>')
 -- delete buffer
-n_remap('<leader>bk', '<cmd>bd<CR>')
+n_remap('<leader>bk', '<cmd>close<CR>')
 
 -- close active tab/window
 n_remap(' c', ':close<CR>')
@@ -58,7 +58,7 @@ n_remap('<leader>we', '<C-w><Down>')
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>.', builtin.find_files, {})
 vim.keymap.set('n', '<leader>,', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>sp', builtin.live_grep, {})
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_ind, {})
 
