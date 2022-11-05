@@ -108,4 +108,7 @@ return require('packer').startup(
         -- git in the gutter
         use 'lewis6991/gitsigns.nvim'
 
+        -- which-key for that emacs-feel guide
+        use "folke/which-key.nvim"
+
     end)
