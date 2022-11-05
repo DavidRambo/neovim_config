@@ -105,4 +105,7 @@ return require('packer').startup(
         -- tab out of those pairs!
         use 'abecodes/tabout.nvim'
 
+        -- git in the gutter
+        use 'lewis6991/gitsigns.nvim'
+
     end)
