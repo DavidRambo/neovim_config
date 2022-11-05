@@ -31,7 +31,7 @@ set.backspace = "indent,eol,start"
 
 set.iskeyword:append("-")
 
-set.wrap = true
+set.wrap = false
 
 set.cmdheight = 1
 
