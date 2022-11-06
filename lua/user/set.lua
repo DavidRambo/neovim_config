@@ -9,7 +9,7 @@ set.nu = true
 set.relativenumber = true
 
 set.signcolumn = "yes"
-set.scrolloff = 8
+set.scrolloff = 6
 
 set.tabstop = 4
 set.softtabstop = 4
