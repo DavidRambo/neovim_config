@@ -5,110 +5,118 @@ vim.cmd([[
   augroup end
 ]])
 
-local status, packer = pcall(require, 'packer')
+local status, packer = pcall(require, "packer")
 if not status then
-    return
+	return
 end
 
-packer.init {
-    display = {
-        open_fn = require('packer.util').float,
-    }
-}
+packer.init({
+	display = {
+		open_fn = require("packer.util").float,
+	},
+})
 
-return require('packer').startup(
-    function(use)
-        -- packer can manage itself
-        use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+	-- packer can manage itself
+	use("wbthomason/packer.nvim")
 
-        -- colorschemes
-        use 'navarasu/onedark.nvim'
-        use 'NTBBloodbath/doom-one.nvim'
+	-- colorschemes
+	use("navarasu/onedark.nvim")
+	use("NTBBloodbath/doom-one.nvim")
 
-        -- icons
-        use 'kyazdani42/nvim-web-devicons'
+	-- icons
+	use("kyazdani42/nvim-web-devicons")
 
-        -- lualine modeline
-        use {
-            'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-        }
+	-- lualine modeline
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 
-        -- NeoVim Tree
-        use {
-            'nvim-tree/nvim-tree.lua',
-            requires = {
-                'nvim-tree/nvim-web-devicons', -- optional, for file icons
-            },
-            tag = 'nightly' -- optional, updated every week. (see issue #1193)
-        }
+	-- NeoVim Tree
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
 
-        -- TreeSitter
-        use {
-            'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate'
-        }
+	-- TreeSitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
 
-        -- fuzzy finder written in lua
-        use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-        use {
-            'nvim-telescope/telescope.nvim', tag = '0.1.0',
-            -- or                            , branch = '0.1.x',
-            requires = { { 'nvim-lua/plenary.nvim' } }
-        }
+	-- fuzzy finder written in lua
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
+		-- or                            , branch = "0.1.x",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-        -- Autopairs
-        use {
-            "windwp/nvim-autopairs",
-            config = function() require("nvim-autopairs").setup {} end
-        }
-        -- Surround
-        use({
-            "kylechui/nvim-surround",
-            tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-            config = function()
-                require("nvim-surround").setup({
-                    -- Configuration here, or leave empty to use defaults
-                })
-            end
-        })
+	-- Autopairs
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
+	-- Surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 
-        -- gc(c) to comment
-        use 'tpope/vim-commentary'
+	-- gc(c) to comment
+	use("tpope/vim-commentary")
 
-        -- LSP Install and Configuration
-        use({
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
-            "mfussenegger/nvim-dap",
-            "mhartington/formatter.nvim",
-        })
+	-- gotta go fast
+	use("phaazon/hop.nvim")
 
-        -- improved UI
-        use({ 'glepnir/lspsaga.nvim', branch = "main" })
-        use("onsails/lspkind.nvim")
+	-- LSP Install and Configuration
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+		"mfussenegger/nvim-dap",
+		-- "mhartington/formatter.nvim",
+	})
 
-        -- Completion
-        use {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            -- "hrsh7th/cmp-cmdline",
-            "hrsh7th/nvim-cmp",
-            -- luasnip
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-            "rafamadriz/friendly-snippets"
-        }
+	-- Formatting
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("jayp0521/mason-null-ls.nvim")
 
-        -- tab out of those pairs!
-        use 'abecodes/tabout.nvim'
+	-- improved UI
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use("onsails/lspkind.nvim")
 
-        -- git in the gutter
-        use 'lewis6991/gitsigns.nvim'
+	-- Completion
+	use({
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		-- "hrsh7th/cmp-cmdline",
+		"hrsh7th/nvim-cmp",
+		-- luasnip
+		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
+		"rafamadriz/friendly-snippets",
+	})
 
-        -- which-key for that emacs-feel guide
-        use "folke/which-key.nvim"
+	-- tab out of those pairs!
+	use("abecodes/tabout.nvim")
 
-    end)
+	-- git in the gutter
+	use("lewis6991/gitsigns.nvim")
+
+	-- which-key for that emacs-feel guide
+	use("folke/which-key.nvim")
+end)
