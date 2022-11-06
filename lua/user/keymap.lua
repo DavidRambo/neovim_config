@@ -69,6 +69,7 @@ vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
 
 -- Filter Diagnostic Severity
 n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
+n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.WARN)<CR>")
 
 -- Hop --
 -- normal mode like easymotion
