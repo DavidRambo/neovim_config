@@ -67,6 +67,9 @@ vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_ind, {})
 
+-- Filter Diagnostic Severity
+n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
+
 -- Hop --
 -- normal mode like easymotion
 n_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")

@@ -14,7 +14,7 @@ set.scrolloff = 6
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
-set.colorcolumn = '80'
+set.colorcolumn = "80"
 
 set.expandtab = true
 
@@ -25,6 +25,7 @@ set.ignorecase = true
 set.smartcase = true
 set.hidden = true
 
+-- set.autoindent = true
 set.smartindent = true
 
 set.backspace = "indent,eol,start"
@@ -37,7 +38,7 @@ set.cmdheight = 1
 
 set.updatetime = 50
 
-set.completeopt = { 'menu', 'menuone', 'noselect' }
+set.completeopt = { "menu", "menuone", "noselect" }
 
 set.clipboard:append("unnamedplus")
 
