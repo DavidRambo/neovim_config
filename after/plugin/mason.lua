@@ -19,7 +19,6 @@ mason_lspconfig.setup({
         "pyright",
         "clangd",
         "sqlls",
-        -- "jdtls",
+        "jdtls",
     }
 })
-
