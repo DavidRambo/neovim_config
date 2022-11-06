@@ -37,10 +37,10 @@ i_remap('<C-e>', '<ESC>A')
 n_remap('<leader>bn', '<cmd>bnext<CR>')
 n_remap('<leader>bp', '<cmd>bprevious<CR>')
 -- delete buffer
-n_remap('<leader>bk', '<cmd>close<CR>')
+n_remap('<leader>bk', '<cmd>bd<CR>')
 
 -- close active tab/window
-n_remap(' c', ':close<CR>')
+n_remap('<leader>c', ':close<CR>')
 
 -- Tabs
 n_remap('<leader>tn', ':tabnew<CR>')
