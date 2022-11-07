@@ -6,6 +6,11 @@ end
 wk.setup()
 
 wk.register({
+	{
+		["<leader><leader>"] = {
+			name = "Hop",
+		},
+	},
 	["<leader>d"] = {
 		name = "diagnostics",
 		f = "Filter to errors only",

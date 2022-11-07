@@ -75,7 +75,7 @@ n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vi
 -- normal mode like easymotion
 n_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
 n_remap("<leader><leader>w", "<cmd>HopWordAC<CR>")
-n_remap("gss", "<cmd>HopChar2<CR>")
+n_remap("gs", "<cmd>HopChar2<CR>")
 n_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
 n_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
 n_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
@@ -90,3 +90,4 @@ v_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
 v_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
 v_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
 v_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
+v_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
