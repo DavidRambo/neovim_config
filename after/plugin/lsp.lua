@@ -65,6 +65,16 @@ lspconfig["pyright"].setup({
 lspconfig["pylsp"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = { "W391", "E226", "E501" },
+					maxLineLength = 90,
+				},
+			},
+		},
+	},
 })
 
 lspconfig.sqlls.setup({

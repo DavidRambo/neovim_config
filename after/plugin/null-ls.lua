@@ -14,8 +14,16 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.autopep8,
 		formatting.clang_format,
-		diagnostics.pylint,
+		diagnostics.pylint.with({
+			diagnostic_config = {
+				underline = false,
+				virtual_text = false,
+				signs = true,
+				severity_sort = true,
+			},
+		}),
 	},
+	-- log_level = "error",
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
 		if current_client.supports_method("textDocument/formatting") then
