@@ -38,9 +38,11 @@ i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
 -- BUFFERS
--- See telescope se ction below for view buffers
+-- See telescope section below for view buffers
 n_remap("<leader>bn", "<cmd>bnext<CR>")
 n_remap("<leader>bp", "<cmd>bprevious<CR>")
+n_remap("<leader>b]", "<cmd>bnext<CR>")
+n_remap("<leader>b[", "<cmd>bprevious<CR>")
 -- delete buffer
 n_remap("<leader>bk", "<cmd>bd<CR>")
 
