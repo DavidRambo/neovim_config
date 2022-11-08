@@ -1,10 +1,11 @@
-local status, neorg = pcall(require, "neorg")
-if not status then
-	return
-end
+-- local status, neorg = pcall(require, "neorg")
+-- if not status then
+-- 	return
+-- end
 
-neorg.setup({
-	load = {
-		["core.defaults"] = {},
-	},
-})
+-- neorg.setup({
+-- 	load = {
+-- 		["core.defaults"] = {},
+-- 		["core.norg.concealer"] = {},
+-- 	},
+-- })

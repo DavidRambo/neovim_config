@@ -149,8 +149,17 @@ return require("packer").startup(function(use)
 	-- organize your life
 	use({
 		"nvim-neorg/neorg",
-		-- tag = "*",
+		tag = "*",
 		ft = "norg",
 		after = "nvim-treesitter", -- You may want to specify Telescope here as well
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("neorg").setup({
+				load = {
+					["core.defaults"] = {},
+					["core.norg.concealer"] = {},
+				},
+			})
+		end,
 	})
 end)
