@@ -22,7 +22,32 @@ return require("packer").startup(function(use)
 
 	-- colorschemes
 	use("navarasu/onedark.nvim")
-	use("NTBBloodbath/doom-one.nvim")
+	use({
+		"NTBBloodbath/doom-one.nvim",
+		setup = function()
+			vim.g.doom_one_cursor_coloring = true
+			vim.g.doom_one_terminal_colors = true
+			vim.g.doom_one_italic_comments = true
+			vim.g.doom_one_enable_treesitter = true
+			vim.g.doom_one_diagnostics_text_color = false
+			vim.g.doom_one_transparent_background = false
+			-- Plugins integration
+			vim.g.doom_one_plugin_neorg = true
+			vim.g.doom_one_plugin_barbar = false
+			vim.g.doom_one_plugin_telescope = true
+			vim.g.doom_one_plugin_neogit = false
+			vim.g.doom_one_plugin_nvim_tree = true
+			vim.g.doom_one_plugin_dashboard = true
+			vim.g.doom_one_plugin_startify = false
+			vim.g.doom_one_plugin_whichkey = true
+			vim.g.doom_one_plugin_indent_blankline = false
+			vim.g.doom_one_plugin_vim_illuminate = true
+			vim.g.doom_one_plugin_lspsaga = true
+		end,
+		config = function()
+			vim.cmd.colorscheme("doom-one")
+		end,
+	})
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
@@ -79,7 +104,8 @@ return require("packer").startup(function(use)
 	use("tpope/vim-commentary")
 
 	-- gotta go fast
-	use("phaazon/hop.nvim")
+	-- use("phaazon/hop.nvim")
+	use("ggandor/leap.nvim")
 
 	-- LSP Install and Configuration
 	use({
@@ -119,4 +145,12 @@ return require("packer").startup(function(use)
 
 	-- which-key for that emacs-feel guide
 	use("folke/which-key.nvim")
+
+	-- organize your life
+	use({
+		"nvim-neorg/neorg",
+		-- tag = "*",
+		ft = "norg",
+		after = "nvim-treesitter", -- You may want to specify Telescope here as well
+	})
 end)

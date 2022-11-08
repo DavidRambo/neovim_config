@@ -1,10 +1,11 @@
-local lualine_status, lualine = pcall(require, 'lualine')
+local lualine_status, lualine = pcall(require, "lualine")
 if not lualine_status then
-    return
+	return
 end
 
-lualine.setup {
-    options = {
-        theme = 'onedark',
-    },
-}
+lualine.setup()
+-- lualine.setup({
+-- 	options = {
+-- 		theme = 'onedark',
+-- 	},
+-- })
