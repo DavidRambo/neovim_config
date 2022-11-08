@@ -65,7 +65,9 @@ vim.keymap.set("n", "<leader>.", builtin.find_files, {})
 vim.keymap.set("n", "<leader>,", builtin.buffers, {})
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_ind, {})
+vim.keymap.set("n", "<leader>st", builtin.treesitter, {})
+vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {})
+-- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
 
 -- Filter Diagnostic Severity
 n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
