@@ -46,7 +46,7 @@ wk.register({
 	},
 	["<leader>w"] = {
 		name = "Windows",
-		vq = { "Vertical Split" },
+		v = { "Vertical Split" },
 		s = { "Horizontal Split" },
 		n = { "Focus Left" },
 		i = { "Focus Right" },
