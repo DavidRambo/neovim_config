@@ -13,7 +13,9 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.autopep8,
-		formatting.clang_format,
+		formatting.clang_format.with({
+			disabled_filetypes = { "java" },
+		}),
 		diagnostics.pylint.with({
 			diagnostic_config = {
 				underline = false,
