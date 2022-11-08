@@ -1,3 +1,4 @@
+-- Function author is blob42.
 local M = {}
 
 local orig_diag_virt_handler = vim.diagnostic.handlers.virtual_text
