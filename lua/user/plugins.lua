@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
 	use({
 		"NTBBloodbath/doom-one.nvim",
 		setup = function()
-			vim.g.doom_one_cursor_coloring = true
+			vim.g.doom_one_cursor_coloring = false
 			vim.g.doom_one_terminal_colors = true
 			vim.g.doom_one_italic_comments = true
 			vim.g.doom_one_enable_treesitter = true
