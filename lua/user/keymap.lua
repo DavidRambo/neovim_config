@@ -1,5 +1,4 @@
--- Space on its own does nothing.
-vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 
 -- For conciseness
 local n_remap = function(lhs, rhs)
@@ -38,15 +37,10 @@ n_remap("<leader>e", ":NvimTreeToggle<CR>")
 i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
--- Delete whole words
-i_remap("<C-BS>", "<C-w>")
-
 -- BUFFERS
 -- See telescope se ction below for view buffers
 n_remap("<leader>bn", "<cmd>bnext<CR>")
 n_remap("<leader>bp", "<cmd>bprevious<CR>")
-n_remap("<leader>b]", "<cmd>bnext<CR>")
-n_remap("<leader>b[", "<cmd>bprevious<CR>")
 -- delete buffer
 n_remap("<leader>bk", "<cmd>bd<CR>")
 
@@ -60,7 +54,6 @@ n_remap("<leader>to", ":tabn<CR>")
 
 -- Windows
 n_remap("<leader>wv", "<C-w>v")
-n_remap("<leader>ws", "<C-w>s")
 n_remap("<leader>wn", "<C-w><Left>")
 n_remap("<leader>wi", "<C-w><Right>")
 n_remap("<leader>wu", "<C-w><Up>")
@@ -82,21 +75,21 @@ n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vi
 
 -- Hop --
 -- normal mode like easymotion
--- n_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
--- n_remap("<leader><leader>w", "<cmd>HopWordAC<CR>")
--- n_remap("gs", "<cmd>HopChar2<CR>")
--- n_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
--- n_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
--- n_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
--- n_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
--- n_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
--- n_remap("<leader><leader>/", "<cmd>HopPattern<CR>")
+n_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
+n_remap("<leader><leader>w", "<cmd>HopWordAC<CR>")
+n_remap("gs", "<cmd>HopChar2<CR>")
+n_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
+n_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
+n_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
+n_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
+n_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
+n_remap("<leader><leader>/", "<cmd>HopPattern<CR>")
 
--- -- visual mode like easymotion
--- v_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
--- v_remap("<leader><leader>w", "<cmd>HopWordAC<CR>")
--- v_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
--- v_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
--- v_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
--- v_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
--- v_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
+-- visual mode like easymotion
+v_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
+v_remap("<leader><leader>w", "<cmd>HopWordAC<CR>")
+v_remap("<leader><leader>s", "<cmd>HopChar2AC<CR>")
+v_remap("<leader><leader>S", "<cmd>HopChar2BC<CR>")
+v_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
+v_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
+v_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")

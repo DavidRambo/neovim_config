@@ -6,9 +6,11 @@ end
 wk.setup()
 
 wk.register({
-	-- ["<leader><leader>"] = {
-	-- 	name = "Hop",
-	-- },
+	{
+		["<leader><leader>"] = {
+			name = "Hop",
+		},
+	},
 	["<leader>d"] = {
 		name = "diagnostics",
 		f = "Filter to errors only",
@@ -18,16 +20,16 @@ wk.register({
 	["<leader>b"] = {
 		name = "buffers",
 	},
-	["<leader>f"] = {
-		name = "File",
-		s = { "Save" },
+	{
+		["<leader>f"] = {
+			name = "File",
+			s = { "Save" },
+		},
 	},
-	["<leader>g"] = {
-		name = "Go to",
-		d = "Definition",
-	},
-	["<leader>r"] = {
-		name = "re-",
+	{
+		["<leader>r"] = {
+			name = "re-",
+		},
 	},
 	["<leader>s"] = {
 		name = "search",
@@ -44,7 +46,7 @@ wk.register({
 	},
 	["<leader>w"] = {
 		name = "Windows",
-		v = { "Vertical Split" },
+		vq = { "Vertical Split" },
 		s = { "Horizontal Split" },
 		n = { "Focus Left" },
 		i = { "Focus Right" },
