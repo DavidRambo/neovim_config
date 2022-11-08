@@ -37,6 +37,9 @@ n_remap("<leader>e", ":NvimTreeToggle<CR>")
 i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
+-- Delete whole word in insert mode
+i_remap("<C-BS>", "<C-w>")
+
 -- BUFFERS
 -- See telescope section below for view buffers
 n_remap("<leader>bn", "<cmd>bnext<CR>")
