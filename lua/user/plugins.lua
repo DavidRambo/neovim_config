@@ -44,9 +44,9 @@ return require("packer").startup(function(use)
 			vim.g.doom_one_plugin_vim_illuminate = true
 			vim.g.doom_one_plugin_lspsaga = true
 		end,
-		config = function()
-			vim.cmd.colorscheme("doom-one")
-		end,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("doom-one")
+		-- end,
 	})
 
 	-- icons
@@ -123,6 +123,10 @@ return require("packer").startup(function(use)
 	-- improved UI
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use("onsails/lspkind.nvim")
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
 
 	-- Completion
 	use({
