@@ -3,9 +3,9 @@ if not lualine_status then
 	return
 end
 
-lualine.setup()
--- lualine.setup({
--- 	options = {
--- 		theme = 'onedark',
--- 	},
--- })
+-- lualine.setup()
+lualine.setup({
+	options = {
+		theme = "onedark",
+	},
+})

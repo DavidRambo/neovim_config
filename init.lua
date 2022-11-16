@@ -1,5 +1,5 @@
 require("user.set")
 require("user.keymap")
 require("user.plugins")
--- require("user.colors.onedark")
+require("user.colors.onedark")
 require("user.filter-diagnostics").set_level(vim.diagnostic.severity.ERROR)
