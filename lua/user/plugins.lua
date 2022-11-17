@@ -127,6 +127,7 @@ return require("packer").startup(function(use)
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
+	use("folke/zen-mode.nvim")
 
 	-- Completion
 	use({

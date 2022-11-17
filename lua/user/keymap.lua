@@ -73,6 +73,7 @@ vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>st", builtin.treesitter, {})
 vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {})
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
+n_remap("<leader>ft", ":TodoTelescope<CR>")
 
 -- Filter Diagnostic Severity
 n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
@@ -98,3 +99,6 @@ n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vi
 -- v_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
 -- v_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
 -- v_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
+
+-- Zen-mode
+n_remap("<leader>tz", "<cmd>ZenMode<CR>")
