@@ -9,9 +9,9 @@ local i_remap = function(lhs, rhs)
 	vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
 end
 
-local v_remap = function(lhs, rhs)
-	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
-end
+-- local v_remap = function(lhs, rhs)
+-- 	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
+-- end
 
 -- map leader to space
 vim.g.mapleader = " "
@@ -50,7 +50,7 @@ n_remap("<leader>b[", "<cmd>bprevious<CR>")
 n_remap("<leader>bk", "<cmd>bd<CR>")
 
 -- close active tab/window
-n_remap("<leader>c", ":close<CR>")
+n_remap("<leader>x", ":close<CR>")
 
 -- Tabs
 n_remap("<leader>tn", ":tabnew<CR>")
@@ -79,6 +79,9 @@ n_remap("<leader>ft", ":TodoTelescope<CR>")
 n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
 n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.WARN)<CR>")
 
+-- Zen-mode
+n_remap("<leader>tz", "<cmd>ZenMode<CR>")
+
 -- Hop --
 -- normal mode like easymotion
 -- n_remap("<leader><leader>b", "<cmd>HopWordBC<CR>")
@@ -99,6 +102,3 @@ n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vi
 -- v_remap("<leader><leader>j", "<cmd>HopLineAC<CR>")
 -- v_remap("<leader><leader>k", "<cmd>HopLineBC<CR>")
 -- v_remap("<leader><leader>[", "<cmd>HopLineStart<CR>")
-
--- Zen-mode
-n_remap("<leader>tz", "<cmd>ZenMode<CR>")
