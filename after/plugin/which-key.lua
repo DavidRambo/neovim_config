@@ -35,6 +35,7 @@ wk.register({
 		name = "search",
 		p = { "Telescope project" },
 		h = { "Telescope help tags" },
+		t = { "Treesitter symbols" },
 	},
 	["<leader>."] = { "Find File" },
 	["<leader>,"] = { "Find Buffer" },
