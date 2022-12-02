@@ -150,4 +150,7 @@ return require("packer").startup(function(use)
 
 	-- which-key for that emacs-feel guide
 	use("folke/which-key.nvim")
+
+	-- org-mode syntax highlighting
+	use("axvr/org.vim")
 end)
