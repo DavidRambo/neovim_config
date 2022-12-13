@@ -40,10 +40,11 @@ wk.register({
 	["<leader>."] = { "Find File" },
 	["<leader>,"] = { "Find Buffer" },
 	["<leader>t"] = {
-		name = "Tabs",
-		n = { "Create Tab" },
-		h = { "Previous Tab" },
-		o = { "Next Tab" },
+		name = "Toggle",
+		-- n = { "Create Tab" },
+		-- h = { "Previous Tab" },
+		-- o = { "Next Tab" },
+		c = { "Neorg Concealer" },
 	},
 	["<leader>w"] = {
 		name = "Windows",
@@ -53,5 +54,15 @@ wk.register({
 		i = { "Focus Right" },
 		u = { "Focus Up" },
 		e = { "Focus Down" },
+	},
+	["gt"] = {
+		name = "Neorg GTD",
+		c = { "Task Cancelled" },
+		d = { "Task Done" },
+		h = { "Task On Hold" },
+		i = { "Task Important" },
+		p = { "Task Pending" },
+		r = { "Task Recurring" },
+		u = { "Task Undone" },
 	},
 })

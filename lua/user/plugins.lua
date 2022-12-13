@@ -49,6 +49,8 @@ return require("packer").startup(function(use)
 		-- end,
 	})
 
+	use("rebelot/kanagawa.nvim")
+
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
 
@@ -153,4 +155,7 @@ return require("packer").startup(function(use)
 
 	-- org-mode syntax highlighting
 	use("axvr/org.vim")
+
+	-- Neo...ORG?
+	use("nvim-neorg/neorg")
 end)

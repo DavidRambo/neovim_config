@@ -53,9 +53,9 @@ n_remap("<leader>bk", "<cmd>bd<CR>")
 n_remap("<leader>x", ":close<CR>")
 
 -- Tabs
-n_remap("<leader>tn", ":tabnew<CR>")
-n_remap("<leader>th", ":tabp<CR>")
-n_remap("<leader>to", ":tabn<CR>")
+-- n_remap("<leader>tn", ":tabnew<CR>")
+-- n_remap("<leader>th", ":tabp<CR>")
+-- n_remap("<leader>to", ":tabn<CR>")
 
 -- Windows
 n_remap("<leader>wv", "<C-w>v")
@@ -81,6 +81,9 @@ n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vi
 
 -- Zen-mode
 n_remap("<leader>tz", "<cmd>ZenMode<CR>")
+
+-- Neorg
+n_remap("<leader>tc", "<cmd>:Neorg toggle-concealer<CR>")
 
 -- Hop --
 -- normal mode like easymotion
