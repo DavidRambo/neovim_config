@@ -66,12 +66,15 @@ n_remap("<leader>we", "<C-w><Down>")
 
 -- Telescope --
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>.", builtin.find_files, {})
+vim.keymap.set("n", "<leader>.", "<cmd>:lua require('user.tele').file_finder()<CR>", {})
 vim.keymap.set("n", "<leader>,", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fp", "<cmd>:lua require('user.tele').edit_nvim_conf()<CR>")
+vim.keymap.set("n", "<leader>ff", "<cmd>:lua require('user.tele').file_finder()<CR>")
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>st", builtin.treesitter, {})
 vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {})
+vim.keymap.set("n", "<leader>sr", builtin.resume, {})
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
 

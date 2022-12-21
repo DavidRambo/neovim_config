@@ -20,11 +20,11 @@ wk.register({
 	["<leader>b"] = {
 		name = "buffers",
 	},
-	{
-		["<leader>f"] = {
-			name = "File",
-			s = { "Save" },
-		},
+	["<leader>f"] = {
+		name = "File",
+		s = { "Save" },
+		f = { "Find File" },
+		p = { "Find Nvim Config File" },
 	},
 	{
 		["<leader>r"] = {
