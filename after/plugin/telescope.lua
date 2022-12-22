@@ -8,7 +8,7 @@ if not actions_setup then
 	return
 end
 
-local themes = require("telescope.themes")
+-- local themes = require("telescope.themes")
 
 telescope.setup({
 	defaults = {
@@ -19,10 +19,8 @@ telescope.setup({
 				["<esc>"] = actions.close,
 			},
 		},
-	},
-	pickers = {
-		find_files = {
-			themes = "ivy",
+		file_ignore_patterns = {
+			".git/.*",
 		},
 	},
 })
