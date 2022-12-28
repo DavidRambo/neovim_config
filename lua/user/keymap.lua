@@ -9,9 +9,9 @@ local i_remap = function(lhs, rhs)
 	vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
 end
 
-local v_remap = function(lhs, rhs)
-	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
-end
+-- local v_remap = function(lhs, rhs)
+-- 	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
+-- end
 
 -- map leader to space
 vim.g.mapleader = " "
@@ -66,16 +66,16 @@ n_remap("<leader>we", "<C-w><Down>")
 
 -- Telescope --
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>.", "<cmd>:lua require('user.tele').file_finder()<CR>", {})
-vim.keymap.set("n", "<leader>,", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fp", "<cmd>:lua require('user.tele').edit_nvim_conf()<CR>", {})
-vim.keymap.set("n", "<leader>ff", "<cmd>:lua require('user.tele').file_finder()<CR>", {})
-vim.keymap.set("n", "<leader>fq", "<cmd>:lua require('user.tele').find_qmk()<CR>", {})
-vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>sp", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>st", builtin.treesitter, {})
-vim.keymap.set("n", "<leader>gd", builtin.lsp_definitions, {})
-vim.keymap.set("n", "<leader>sr", builtin.resume, {})
+n_remap("<leader>.", "<cmd>:lua require('user.tele').file_finder()<CR>")
+n_remap("<leader>,", "<cmd>:Telescope buffers<CR>")
+n_remap("<leader>fp", "<cmd>:lua require('user.tele').edit_nvim_conf()<CR>")
+n_remap("<leader>ff", "<cmd>:lua require('user.tele').file_finder()<CR>")
+n_remap("<leader>fq", "<cmd>:lua require('user.tele').find_qmk()<CR>")
+n_remap("<leader>sh", "<cmd>:Telescope help_tags<CR>")
+n_remap("<leader>sp", "<cmd>:Telescope live_grep<CR>")
+n_remap("<leader>st", "<cmd>:Telescope treesitter<CR>")
+n_remap("<leader>gd", "<cmd>:Telescope lsp_definitions<CR>")
+n_remap("<leader>sr", "<cmd>:Telescope resume<CR>")
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
 
