@@ -108,6 +108,7 @@ return require("packer").startup(function(use)
 	-- gotta go fast
 	-- use("phaazon/hop.nvim")
 	use("ggandor/leap.nvim")
+	use("fedepujol/move.nvim")
 
 	-- LSP Install and Configuration
 	use({

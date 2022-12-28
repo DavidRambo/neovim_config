@@ -9,9 +9,9 @@ local i_remap = function(lhs, rhs)
 	vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
 end
 
--- local v_remap = function(lhs, rhs)
--- 	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
--- end
+local v_remap = function(lhs, rhs)
+	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
+end
 
 -- map leader to space
 vim.g.mapleader = " "
@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap(
 )
 
 -- map save to doom emacs bindings
-n_remap(" fs", ":w<CR>")
+n_remap("<leader>fs", ":w<CR>")
 
 -- toggle nvim-tree
 n_remap("<leader>e", ":NvimTreeToggle<CR>")
@@ -88,6 +88,10 @@ n_remap("<leader>tz", "<cmd>ZenMode<CR>")
 
 -- Neorg
 n_remap("<leader>tc", "<cmd>:Neorg toggle-concealer<CR>")
+
+-- move.nvim
+n_remap("<C-j>", ":MoveLine(1)<CR>")
+n_remap("<C-k>", ":MoveLine(-1)<CR>")
 
 -- Hop --
 -- normal mode like easymotion
