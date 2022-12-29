@@ -26,6 +26,11 @@ wk.register({
 		f = { "Find File" },
 		p = { "Find Nvim Config File" },
 	},
+	["<leader>m"] = {
+		name = "Neorg modes",
+		n = { "norg" },
+		h = { "traverse-heading" },
+	},
 	{
 		["<leader>r"] = {
 			name = "re-",

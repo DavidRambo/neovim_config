@@ -3,9 +3,16 @@ if not status then
 	return
 end
 
+-- [[
+-- Starter configs:
+-- https://github.com/max397574/omega-nvim/blob/master/lua/omega/modules/neorg.lua
+-- https://github.com/josephsdavid/neovim2/blob/master/lua/config/norg.lua
+-- ]]
+
 neorg.setup({
 	load = {
 		["core.defaults"] = {},
+		-- ["core.integrations.telescope"] = {},
 		["core.norg.concealer"] = {
 			config = {
 				dim_code_blocks = {
@@ -33,6 +40,7 @@ neorg.setup({
 				workspaces = {
 					dropbox = "~/Dropbox (Maestral)/neorg/",
 				},
+				index = "index.norg",
 			},
 		},
 		["core.keybinds"] = {
@@ -89,10 +97,10 @@ neorg.setup({
 						noremap = true,
 						nowait = true,
 					})
-
-					keybinds.map("norg", "n", "<leader>tv", "<cmd>Neorg gdt views<CR>")
 				end,
 			},
 		},
 	},
 })
+
+vim.opt.conceallevel = 3
