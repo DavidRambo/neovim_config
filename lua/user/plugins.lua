@@ -158,5 +158,8 @@ return require("packer").startup(function(use)
 	use("axvr/org.vim")
 
 	-- Neo...ORG?
-	use("nvim-neorg/neorg")
+	use({
+		"nvim-neorg/neorg",
+		run = ":Neorg sync-parsers",
+	})
 end)
