@@ -1,6 +1,6 @@
 local M = {}
 
-local themes = require("telescope.themes")
+-- local themes = require("telescope.themes")
 local telescope = require("telescope.builtin")
 
 -- Edit neovim config
