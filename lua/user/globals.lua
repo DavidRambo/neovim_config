@@ -13,6 +13,10 @@ P = function(v)
 	return v
 end
 
+-- [[
+-- A function to reload a module, which is useful when iterating
+-- on a plugin.
+-- ]]
 RELOAD = function(...)
 	return require("plenary.reload").reload_module(...)
 end

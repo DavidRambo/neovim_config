@@ -49,8 +49,6 @@ return require("packer").startup(function(use)
 		-- end,
 	})
 
-	use("rebelot/kanagawa.nvim")
-
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
 
@@ -112,6 +110,8 @@ return require("packer").startup(function(use)
 	-- use("phaazon/hop.nvim")
 	use("ggandor/leap.nvim")
 	use("fedepujol/move.nvim")
+	-- tab out of those pairs!
+	use("abecodes/tabout.nvim")
 
 	-- LSP Install and Configuration
 	use({
@@ -147,9 +147,6 @@ return require("packer").startup(function(use)
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 	})
-
-	-- tab out of those pairs!
-	use("abecodes/tabout.nvim")
 
 	-- git in the gutter
 	use("lewis6991/gitsigns.nvim")
