@@ -50,6 +50,7 @@ wk.register({
 		d = { "[S]earch LSP [D]efinition" },
 		p = { "[S]earch [P]roject" },
 		h = { "[S]earch [H]elp tags" },
+		o = { ":Telescope oldfiles<CR>", "[S]earch Recent Files" },
 		r = { "[R]esume [S]earch" },
 		t = { "[S]earch [T]reesitter symbols" },
 	},
