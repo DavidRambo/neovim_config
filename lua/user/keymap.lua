@@ -68,7 +68,7 @@ n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only")
 
 -- Telescope --
-local builtin = require("telescope.builtin")
+-- local builtin = require("telescope.builtin")
 n_remap("<leader>.", "<cmd>:lua require('user.tele').file_finder()<CR>")
 n_remap("<leader>,", "<cmd>:Telescope buffers<CR>")
 n_remap("<leader>fb", ":Telescope file_browser<CR>")
@@ -99,8 +99,7 @@ n_remap("<C-j>", ":MoveLine(1)<CR>")
 n_remap("<C-k>", ":MoveLine(-1)<CR>")
 
 -- Git --
-local neogit = require("neogit")
-n_remap("<leader>gg", "neogit.open()")
+n_remap("<space>gg", ":Neogit<CR>")
 
 -- Hop --
 -- normal mode like easymotion
