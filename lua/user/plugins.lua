@@ -148,6 +148,9 @@ return require("packer").startup(function(use)
 		"rafamadriz/friendly-snippets",
 	})
 
+	-- Like magit
+	use("tpope/vim-fugitive")
+	use("tpope/vim-rhubarb")
 	-- git in the gutter
 	use("lewis6991/gitsigns.nvim")
 
