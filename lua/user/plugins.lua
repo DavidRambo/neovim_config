@@ -92,6 +92,7 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
+
 	-- Surround
 	use({
 		"kylechui/nvim-surround",
@@ -102,6 +103,9 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+
+	-- Mark indentations
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- gc(c) to comment
 	use("numToStr/Comment.nvim")
@@ -159,7 +163,7 @@ return require("packer").startup(function(use)
 	-- org-mode syntax highlighting
 	use("axvr/org.vim")
 
-	-- Neo...ORG?
+	-- Neorg
 	use({
 		"nvim-neorg/neorg",
 		run = ":Neorg sync-parsers",
