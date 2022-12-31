@@ -1,2 +1,5 @@
 *.DS_Store
 plugin/packer_compiled.lua
+tags
+node_modules/
+*.json
