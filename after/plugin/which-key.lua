@@ -26,6 +26,10 @@ wk.register({
 		f = { "Find File" },
 		p = { "Find Nvim Config File" },
 	},
+	["<leader>g"] = {
+		name = "Neogit",
+		g = { "Open Neo[g]it" },
+	},
 	["<leader>m"] = {
 		name = "Neorg modes",
 		n = { "norg" },
@@ -38,6 +42,7 @@ wk.register({
 	},
 	["<leader>s"] = {
 		name = "search",
+		d = { "[S]earch LSP [D]efinition" },
 		p = { "[S]earch [P]roject" },
 		h = { "[S]earch [H]elp tags" },
 		r = { "[R]esume [S]earch" },
@@ -60,6 +65,8 @@ wk.register({
 		i = { "Focus Right" },
 		u = { "Focus Up" },
 		e = { "Focus Down" },
+		b = { "[B]alance Windows" },
+		o = { "Close [O]ther Windows" },
 	},
 	["gt"] = {
 		name = "Neorg GTD",

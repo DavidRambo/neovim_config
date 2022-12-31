@@ -58,11 +58,14 @@ n_remap("<leader>x", ":close<CR>")
 -- n_remap("<leader>to", ":tabn<CR>")
 
 -- Windows
-n_remap("<leader>wv", "<C-w>v")
+n_remap("<leader>ws", ":split<CR>:Telescope buffers<CR>")
+n_remap("<leader>wv", ":vsplit<CR>:Telescope buffers<CR>")
 n_remap("<leader>wn", "<C-w><Left>")
 n_remap("<leader>wi", "<C-w><Right>")
 n_remap("<leader>wu", "<C-w><Up>")
 n_remap("<leader>we", "<C-w><Down>")
+n_remap("<leader>wb", "<C-w>=")
+n_remap("<leader>wo", ":only")
 
 -- Telescope --
 local builtin = require("telescope.builtin")
@@ -76,7 +79,7 @@ n_remap("<leader>sh", "<cmd>:Telescope help_tags<CR>")
 n_remap("<leader>sp", "<cmd>:Telescope live_grep<CR>")
 n_remap("<leader>ss", "<cmd>:Telescope treesitter<CR>")
 n_remap("<leader>sk", ":Telescope keymaps<CR>")
-n_remap("<leader>gd", "<cmd>:Telescope lsp_definitions<CR>")
+n_remap("<leader>sd", "<cmd>:Telescope lsp_definitions<CR>")
 n_remap("<leader>sr", "<cmd>:Telescope resume<CR>")
 -- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
@@ -94,6 +97,10 @@ n_remap("<leader>tc", "<cmd>:Neorg toggle-concealer<CR>")
 -- move.nvim
 n_remap("<C-j>", ":MoveLine(1)<CR>")
 n_remap("<C-k>", ":MoveLine(-1)<CR>")
+
+-- Git --
+local neogit = require("neogit")
+n_remap("<leader>gg", "neogit.open()")
 
 -- Hop --
 -- normal mode like easymotion
