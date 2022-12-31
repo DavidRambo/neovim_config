@@ -5,7 +5,7 @@ end
 
 indent.setup({
 	show_current_context = true,
-	show_current_context_start = true,
+	-- show_current_context_start = true,
 	--[[ Note: underline appearance is a property of the terminal.
 	In wezterm: underline_thickness
 	In kitty: modify_font ]]
