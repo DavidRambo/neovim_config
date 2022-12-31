@@ -104,7 +104,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- gc(c) to comment
-	use("tpope/vim-commentary")
+	use("numToStr/Comment.nvim")
 
 	-- gotta go fast
 	-- use("phaazon/hop.nvim")
