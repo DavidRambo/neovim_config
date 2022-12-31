@@ -38,9 +38,10 @@ wk.register({
 	},
 	["<leader>s"] = {
 		name = "search",
-		p = { "Telescope project" },
-		h = { "Telescope help tags" },
-		t = { "Treesitter symbols" },
+		p = { "[S]earch [P]roject" },
+		h = { "[S]earch [H]elp tags" },
+		r = { "[R]esume [S]earch" },
+		t = { "[S]earch [T]reesitter symbols" },
 	},
 	["<leader>."] = { "Find File" },
 	["<leader>,"] = { "Find Buffer" },
