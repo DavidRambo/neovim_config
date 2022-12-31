@@ -1,12 +1,5 @@
 require("nvim-treesitter.configs").setup({
-	highlight = {
-		enable = true,
-	},
-	indent = {
-		enable = false,
-		disable = { "python" },
-	},
-	-- A list of parser names
+	-- A list of languages to be installed
 	ensure_installed = {
 		"c",
 		"python",
@@ -22,7 +15,15 @@ require("nvim-treesitter.configs").setup({
 		"scheme",
 		"gitignore",
 		"bash",
+		"help",
 	},
 
+	highlight = {
+		enable = true,
+	},
+	indent = {
+		enable = false,
+		disable = { "python" },
+	},
 	sync_install = false,
 })
