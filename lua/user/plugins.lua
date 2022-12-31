@@ -149,8 +149,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Like magit
-	use("tpope/vim-fugitive")
-	use("tpope/vim-rhubarb")
+	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 	-- git in the gutter
 	use("lewis6991/gitsigns.nvim")
 
