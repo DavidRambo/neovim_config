@@ -68,7 +68,7 @@ n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only")
 
 -- Telescope --
--- local builtin = require("telescope.builtin")
+local builtin = require("telescope.builtin")
 n_remap("<leader>.", "<cmd>:lua require('user.tele').file_finder()<CR>")
 n_remap("<leader>,", "<cmd>:Telescope buffers<CR>")
 n_remap("<leader>fb", ":Telescope file_browser<CR>")
@@ -81,7 +81,7 @@ n_remap("<leader>ss", "<cmd>:Telescope treesitter<CR>")
 n_remap("<leader>sk", ":Telescope keymaps<CR>")
 n_remap("<leader>sd", "<cmd>:Telescope lsp_definitions<CR>")
 n_remap("<leader>sr", "<cmd>:Telescope resume<CR>")
--- vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set("n", "<leader>sb", builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
 
 -- Filter Diagnostic Severity
