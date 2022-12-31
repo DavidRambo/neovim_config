@@ -1,6 +1,14 @@
-local gitsigns_status, gitsigns = pcall(require, 'gitsigns')
+local gitsigns_status, gitsigns = pcall(require, "gitsigns")
 if not gitsigns_status then
-    return
+	return
 end
 
-gitsigns.setup()
+gitsigns.setup({
+	signs = {
+		add = { text = "+" },
+		change = { text = "~" },
+		delete = { text = "_" },
+		topdelete = { text = "‾" },
+		changedelete = { text = "~" },
+	},
+})
