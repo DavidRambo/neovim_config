@@ -73,6 +73,7 @@ wk.register({
 		e = { "Focus Down" },
 		b = { "[B]alance Windows" },
 		o = { "Close [O]ther Windows" },
+		c = { "[C]lose Window" },
 	},
 	["gt"] = {
 		name = "Neorg GTD",

@@ -9,9 +9,9 @@ local i_remap = function(lhs, rhs)
 	vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
 end
 
--- local v_remap = function(lhs, rhs)
--- 	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
--- end
+local v_remap = function(lhs, rhs)
+	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
+end
 
 -- map leader to space
 vim.g.mapleader = " "
@@ -26,6 +26,21 @@ vim.api.nvim_set_keymap(
 	"v:count == 0 ? 'g<Down>' : '<Down>'",
 	{ noremap = true, expr = true, silent = true }
 )
+
+n_remap("<C-d>", "<C-d>zz")
+n_remap("<C-u>", "<C-u>zz")
+n_remap("n", "nzzzv")
+n_remap("N", "Nzzzv")
+
+-- keep that yank for more pasting
+vim.keymap.set("x", "<leader>p", '"_dP')
+
+-- from asbjornHaland by way of theprimeagen
+-- yank into system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+n_remap("Q", "<nop>")
 
 -- map save to doom emacs bindings
 n_remap("<leader>fs", ":w<CR>")
@@ -49,9 +64,6 @@ n_remap("<leader>b[", "<cmd>bprevious<CR>")
 -- delete buffer
 n_remap("<leader>bk", "<cmd>bd<CR>")
 
--- close active tab/window
-n_remap("<leader>x", ":close<CR>")
-
 -- Tabs
 -- n_remap("<leader>tn", ":tabnew<CR>")
 -- n_remap("<leader>th", ":tabp<CR>")
@@ -66,6 +78,7 @@ n_remap("<leader>wu", "<C-w><Up>")
 n_remap("<leader>we", "<C-w><Down>")
 n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only")
+n_remap("<leader>wx", ":close<CR>")
 
 -- Telescope --
 local builtin = require("telescope.builtin")
@@ -97,6 +110,8 @@ n_remap("<leader>tc", "<cmd>:Neorg toggle-concealer<CR>")
 -- move.nvim
 n_remap("<C-j>", ":MoveLine(1)<CR>")
 n_remap("<C-k>", ":MoveLine(-1)<CR>")
+v_remap("<C-j>", ":m '>+1<CR>gv=gv")
+v_remap("<C-k>", ":m '>-2<CR>gv=gv")
 
 -- Git --
 n_remap("<space>gg", ":Neogit<CR>")

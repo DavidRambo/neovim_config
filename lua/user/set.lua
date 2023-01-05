@@ -1,6 +1,6 @@
 local set = vim.opt
 
--- set.guicursor = ""
+-- set.guicursor = "" -- thick cursor in insert mode
 
 set.background = "dark"
 set.termguicolors = true
