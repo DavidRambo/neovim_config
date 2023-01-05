@@ -78,7 +78,7 @@ n_remap("<leader>wu", "<C-w><Up>")
 n_remap("<leader>we", "<C-w><Down>")
 n_remap("<leader>wb", "<C-w>=")
 n_remap("<leader>wo", ":only")
-n_remap("<leader>wx", ":close<CR>")
+n_remap("<leader>wc", ":close<CR>")
 
 -- Telescope --
 local builtin = require("telescope.builtin")
