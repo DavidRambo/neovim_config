@@ -48,6 +48,10 @@ return require("packer").startup(function(use)
 		-- 	vim.cmd.colorscheme("doom-one")
 		-- end,
 	})
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+	})
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
