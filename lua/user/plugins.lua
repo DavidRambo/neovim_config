@@ -68,10 +68,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- TreeSitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
 	-- fuzzy finder written in lua
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -111,10 +108,9 @@ return require("packer").startup(function(use)
 
 	-- gotta go fast
 	-- use("phaazon/hop.nvim")
-	use("ggandor/leap.nvim")
-	use("fedepujol/move.nvim")
-	-- tab out of those pairs!
-	use("abecodes/tabout.nvim")
+	use("ggandor/leap.nvim") -- sneak attack!
+	use("fedepujol/move.nvim") -- C-j/k to move lines
+	use("abecodes/tabout.nvim") -- tab out of those pairs!
 
 	-- LSP Install and Configuration
 	use({
