@@ -53,7 +53,7 @@ i_remap("<C-a>", "<ESC>I")
 i_remap("<C-e>", "<ESC>A")
 
 -- Delete whole word in insert mode
-i_remap("<C-BS>", "<C-w>")
+i_remap("<C-h>", "<C-w>")
 
 -- BUFFERS
 -- See telescope section below for view buffers
