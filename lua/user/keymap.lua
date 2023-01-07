@@ -55,6 +55,9 @@ i_remap("<C-e>", "<ESC>A")
 -- Delete whole word in insert mode
 i_remap("<C-h>", "<C-w>")
 
+-- Add newline above in insert mode
+i_remap("OO", "<ESC>O")
+
 -- BUFFERS
 -- See telescope section below for view buffers
 n_remap("<leader>bn", "<cmd>bnext<CR>")
