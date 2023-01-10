@@ -151,6 +151,9 @@ return require("packer").startup(function(use)
 		"rafamadriz/friendly-snippets",
 	})
 
+	-- Tree-like view of Symbols
+	use("simrat39/symbols-outline.nvim")
+
 	-- Like magit
 	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 	-- git in the gutter

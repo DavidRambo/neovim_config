@@ -40,10 +40,8 @@ wk.register({
 		n = { "norg" },
 		h = { "traverse-heading" },
 	},
-	{
-		["<leader>r"] = {
-			name = "re-",
-		},
+	["<leader>r"] = {
+		name = "re-",
 	},
 	["<leader>s"] = {
 		name = "search",
@@ -52,6 +50,7 @@ wk.register({
 		h = { "[S]earch [H]elp tags" },
 		o = { ":Telescope oldfiles<CR>", "[S]earch Recent Files" },
 		r = { "[R]esume [S]earch" },
+		s = { ":SymbolsOutline<CR>", "[S]how [S]ymbols Outline" },
 		t = { "[S]earch [T]reesitter symbols" },
 	},
 	["<leader>."] = { "Find File" },
