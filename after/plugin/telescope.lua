@@ -8,6 +8,8 @@ if not actions_setup then
 	return
 end
 
+local fb_actions = require("telescope").extensions.file_browser.actions
+
 -- local themes = require("telescope.themes")
 
 telescope.setup({
@@ -21,6 +23,17 @@ telescope.setup({
 		},
 		file_ignore_patterns = {
 			".git/.*",
+		},
+	},
+	extensions = {
+		file_browser = {
+			theme = "ivy",
+			hijack_netrw = true,
+			mappings = {
+				["i"] = {
+					["<C-a>"] = fb_actions.create,
+				},
+			},
 		},
 	},
 })
