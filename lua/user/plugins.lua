@@ -53,6 +53,8 @@ return require("packer").startup(function(use)
 		as = "rose-pine",
 	})
 
+	use("glepnir/dashboard-nvim")
+
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
 

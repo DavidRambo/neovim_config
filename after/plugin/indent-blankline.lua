@@ -12,4 +12,5 @@ indent.setup({
 
 	char = "┊",
 	show_trailing_blankline_indent = false,
+	filetype_exclude = { "dashboard" },
 })
