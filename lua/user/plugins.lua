@@ -115,8 +115,9 @@ return require("packer").startup(function(use)
 	-- gotta go fast
 	-- use("phaazon/hop.nvim")
 	use("ggandor/leap.nvim") -- sneak attack!
-	use("fedepujol/move.nvim") -- C-j/k to move lines
+	-- use("fedepujol/move.nvim") -- C-j/k to move lines
 	use("abecodes/tabout.nvim") -- tab out of those pairs!
+	use("echasnovski/mini.move") -- move lines and Ctrl-v blocks
 
 	-- LSP Install and Configuration
 	use({

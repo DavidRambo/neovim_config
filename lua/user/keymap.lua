@@ -111,10 +111,10 @@ n_remap("<leader>tz", "<cmd>ZenMode<CR>")
 n_remap("<leader>tc", "<cmd>:Neorg toggle-concealer<CR>")
 
 -- move.nvim
-n_remap("<C-j>", ":MoveLine(1)<CR>")
-n_remap("<C-k>", ":MoveLine(-1)<CR>")
-v_remap("<C-j>", ":m '>+1<CR>gv=gv")
-v_remap("<C-k>", ":m '>-2<CR>gv=gv")
+-- n_remap("<C-j>", ":MoveLine(1)<CR>")
+-- n_remap("<C-k>", ":MoveLine(-1)<CR>")
+-- v_remap("<C-j>", ":m '>+1<CR>gv=gv")
+-- v_remap("<C-k>", ":m '>-2<CR>gv=gv")
 
 -- Git --
 n_remap("<space>gg", ":Neogit<CR>")
