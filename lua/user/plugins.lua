@@ -138,6 +138,9 @@ return require("packer").startup(function(use)
 		branch = "main",
 		config = function()
 			require("lspsaga").setup({
+				lightbulb = {
+					enable = false,
+				},
 				code_action_icon = "",
 				move_in_saga = { prev = "<C-p>", next = "<C-n>" },
 				finder_action_keys = {
