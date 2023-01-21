@@ -46,3 +46,5 @@ set.clipboard:append("unnamedplus")
 -- split windows
 set.splitright = true
 set.splitbelow = true
+
+vim.g.python3_host_prog = "/Users/david/.pyenv/versions/3.11.1/bin/python"

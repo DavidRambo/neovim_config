@@ -23,7 +23,6 @@ mason_lspconfig.setup({
 		"sumneko_lua",
 		"pylsp",
 		"pyright",
-		"black",
 		"clangd",
 		"sqlls",
 		"jdtls",

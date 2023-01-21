@@ -172,6 +172,15 @@ return require("packer").startup(function(use)
 		"rafamadriz/friendly-snippets",
 	})
 
+	-- To integrate Poetry with the Python LSP
+	-- use({
+	-- 	"karloskar/poetry-nvim",
+	-- 	config = function()
+	-- 		require("poetry-nvim").setup()
+	-- 	end,
+	-- })
+	-- use({ "rafi/vim-venom", ft = { "python" }, config = 'require("venom").setup()' })
+
 	-- Tree-like view of Symbols
 	use("simrat39/symbols-outline.nvim")
 
