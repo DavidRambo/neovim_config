@@ -12,7 +12,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	sources = {
 		formatting.stylua,
-		formatting.autopep8,
+		formatting.black,
 		-- formatting.clang_format.with({
 		-- 	disabled_filetypes = { "java" },
 		-- }),
