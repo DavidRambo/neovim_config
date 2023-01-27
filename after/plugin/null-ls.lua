@@ -16,14 +16,15 @@ null_ls.setup({
 		-- formatting.clang_format.with({
 		-- 	disabled_filetypes = { "java" },
 		-- }),
-		diagnostics.pylint.with({
+		null_ls.builtins.diagnostics.flake8,
+		--[[ diagnostics.pylint.with({
 			diagnostic_config = {
 				underline = false,
 				virtual_text = false,
 				signs = true,
 				severity_sort = true,
 			},
-		}),
+		}), ]]
 	},
 	-- log_level = "error",
 	-- configure format on save

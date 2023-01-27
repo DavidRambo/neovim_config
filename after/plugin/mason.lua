@@ -33,6 +33,6 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"stylua",
 		"clang_format",
-		"pylint",
+		-- "pylint",
 	},
 })
