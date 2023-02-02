@@ -102,10 +102,10 @@ lspconfig.pyright.before_init = function(params, config)
 	end
 end
 
-lspconfig["pyright"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+-- lspconfig["pyright"].setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 lspconfig["pylsp"].setup({
 	on_attach = on_attach,
