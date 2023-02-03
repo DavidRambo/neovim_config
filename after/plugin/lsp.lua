@@ -15,20 +15,22 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
-	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-	vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	-- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+	-- vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 	vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", " dh", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-	vim.keymap.set("n", " d]", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-	vim.keymap.set("n", " d[", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+	vim.keymap.set("n", "<leader>dh", vim.diagnostic.open_float, opts)
+	-- vim.keymap.set("n", " dh", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+	-- vim.keymap.set("n", " d]", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+	-- vim.keymap.set("n", " d[", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 	vim.keymap.set("n", " dn", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", " dp", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<CR>", opts)
-	vim.keymap.set("n", " rn", "<cmd>Lspsaga rename<CR>", opts)
+	-- vim.keymap.set("n", " rn", "<cmd>Lspsaga rename<CR>", opts)
+	vim.keymap.set("n", " rn", vim.lsp.buf.rename, opts)
 end
 
 vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
@@ -81,31 +83,31 @@ local function get_python_path(workspace)
 	return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
 end
 
-require("lspconfig").pyright.setup({
-	on_attach = function()
-		require("lsp_signature").on_attach({
-			hint_enable = false,
-		})
-	end,
-	on_init = function(client)
-		client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
-	end,
+--[[ require("lspconfig").pyright.setup({
+    on_attach = function()
+        require("lsp_signature").on_attach({
+            hint_enable = false,
+        })
+    end,
+    on_init = function(client)
+        client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
+    end,
 })
 
 lspconfig.pyright.before_init = function(params, config)
-	local Path = require("plenary.path")
-	local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), ".venv")
-	if venv:joinpath("bin"):is_dir() then
-		config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
-	else
-		config.settings.python.pythonPath = tostring(venv:joinpath("Scripts", "python.exe"))
-	end
+    local Path = require("plenary.path")
+    local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), ".venv")
+    if venv:joinpath("bin"):is_dir() then
+        config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
+    else
+        config.settings.python.pythonPath = tostring(venv:joinpath("Scripts", "python.exe"))
+    end
 end
 
--- lspconfig["pyright"].setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
+lspconfig["pyright"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+}) ]]
 
 lspconfig["pylsp"].setup({
 	on_attach = on_attach,

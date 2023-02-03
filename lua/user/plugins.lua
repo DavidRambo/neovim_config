@@ -133,7 +133,7 @@ return require("packer").startup(function(use)
 	use("jayp0521/mason-null-ls.nvim")
 
 	-- improved UI
-	use({
+	--[[ use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 		config = function()
@@ -151,7 +151,7 @@ return require("packer").startup(function(use)
 				},
 			})
 		end,
-	})
+	}) ]]
 	use("onsails/lspkind.nvim")
 	use({
 		"folke/todo-comments.nvim",
