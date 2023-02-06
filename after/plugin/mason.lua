@@ -22,7 +22,6 @@ mason_lspconfig.setup({
 		"cssls",
 		"sumneko_lua",
 		"pylsp",
-		"pyright",
 		"clangd",
 		"sqlls",
 		"jdtls",
