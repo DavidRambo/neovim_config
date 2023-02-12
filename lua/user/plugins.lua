@@ -52,8 +52,9 @@ return require("packer").startup(function(use)
 		"rose-pine/neovim",
 		as = "rose-pine",
 	})
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	use("glepnir/dashboard-nvim")
+	-- use("glepnir/dashboard-nvim")
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
