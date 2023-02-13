@@ -35,7 +35,7 @@ end
 
 vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {

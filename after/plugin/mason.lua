@@ -20,7 +20,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"html",
 		"cssls",
-		"sumneko_lua",
+		"lua_ls",
 		"pylsp",
 		"pyright",
 		"clangd",
