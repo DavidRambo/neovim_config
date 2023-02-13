@@ -22,7 +22,6 @@ mason_lspconfig.setup({
 		"cssls",
 		"lua_ls",
 		"pylsp",
-		"pyright",
 		"clangd",
 		"sqlls",
 		"jdtls",
