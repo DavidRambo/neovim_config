@@ -199,6 +199,8 @@ return require("packer").startup(function(use)
 	-- Neorg
 	use({
 		"nvim-neorg/neorg",
+		ft = "norg",
+		after = "nvim-treesitter",
 		run = ":Neorg sync-parsers",
 	})
 end)
