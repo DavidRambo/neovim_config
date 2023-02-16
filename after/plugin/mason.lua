@@ -24,7 +24,7 @@ mason_lspconfig.setup({
 		"pylsp",
 		"clangd",
 		"sqlls",
-		"jdtls",
+		-- "jdtls",
 	},
 })
 
@@ -32,6 +32,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"stylua",
 		"clang_format",
-		-- "pylint",
+		"black",
+		"flake8",
 	},
 })
