@@ -17,6 +17,7 @@ null_ls.setup({
 		-- 	disabled_filetypes = { "java" },
 		-- }),
 		diagnostics.flake8,
+		diagnostics.mypy,
 		--[[ diagnostics.pylint.with({
 			diagnostic_config = {
 				underline = false,

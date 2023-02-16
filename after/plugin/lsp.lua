@@ -119,6 +119,8 @@ lspconfig["pylsp"].setup({
 					ignore = { "W391", "E226", "E501" },
 					maxLineLength = 88,
 				},
+				pyflakes = { enabled = false },
+				pylint = { enabled = false },
 			},
 		},
 	},
