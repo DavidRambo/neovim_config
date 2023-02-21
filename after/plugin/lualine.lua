@@ -7,6 +7,7 @@ end
 lualine.setup({
 	options = {
 		-- theme = "doom-one",
+		theme = "catppuccin",
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
 	},

@@ -66,6 +66,7 @@ n_remap("<leader>b]", "<cmd>bnext<CR>")
 n_remap("<leader>b[", "<cmd>bprevious<CR>")
 -- delete buffer
 n_remap("<leader>bk", "<cmd>bd<CR>")
+n_remap("<leader>ht", "<cmd>Telescope colorscheme<CR>")
 
 -- Tabs
 -- n_remap("<leader>tn", ":tabnew<CR>")
