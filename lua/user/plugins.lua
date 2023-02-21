@@ -119,6 +119,7 @@ return require("packer").startup(function(use)
 	-- use("fedepujol/move.nvim") -- C-j/k to move lines
 	use("abecodes/tabout.nvim") -- tab out of those pairs!
 	use("echasnovski/mini.move") -- move lines and Ctrl-v blocks
+	use("echasnovski/mini.bracketed")
 
 	-- LSP Install and Configuration
 	use({
