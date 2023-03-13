@@ -15,7 +15,7 @@ set.sidescrolloff = 8
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
-set.colorcolumn = "90"
+-- set.colorcolumn = "90"
 
 set.expandtab = true
 
