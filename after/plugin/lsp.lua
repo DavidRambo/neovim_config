@@ -83,48 +83,48 @@ local function get_python_path(workspace)
 	return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
 end
 
---[[ require("lspconfig").pyright.setup({
-    on_attach = function()
-        require("lsp_signature").on_attach({
-            hint_enable = false,
-        })
-    end,
-    on_init = function(client)
-        client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
-    end,
+require("lspconfig").pyright.setup({
+	on_attach = function()
+		require("lsp_signature").on_attach({
+			hint_enable = false,
+		})
+	end,
+	on_init = function(client)
+		client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
+	end,
 })
 
 lspconfig.pyright.before_init = function(params, config)
-    local Path = require("plenary.path")
-    local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), ".venv")
-    if venv:joinpath("bin"):is_dir() then
-        config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
-    else
-        config.settings.python.pythonPath = tostring(venv:joinpath("Scripts", "python.exe"))
-    end
+	local Path = require("plenary.path")
+	local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), ".venv")
+	if venv:joinpath("bin"):is_dir() then
+		config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
+	else
+		config.settings.python.pythonPath = tostring(venv:joinpath("Scripts", "python.exe"))
+	end
 end
 
 lspconfig["pyright"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-}) ]]
-
-lspconfig["pylsp"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					ignore = { "W391", "E226", "E501" },
-					maxLineLength = 88,
-				},
-				pyflakes = { enabled = false },
-				pylint = { enabled = false },
-			},
-		},
-	},
 })
+
+-- lspconfig["pylsp"].setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	settings = {
+-- 		pylsp = {
+-- 			plugins = {
+-- 				pycodestyle = {
+-- 					ignore = { "W391", "E226", "E501" },
+-- 					maxLineLength = 88,
+-- 				},
+-- 				pyflakes = { enabled = false },
+-- 				pylint = { enabled = false },
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 lspconfig.sqlls.setup({
 	on_attach = on_attach,
