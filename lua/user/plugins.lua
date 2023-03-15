@@ -183,6 +183,9 @@ return require("packer").startup(function(use)
 	-- })
 	-- use({ "rafi/vim-venom", ft = { "python" }, config = 'require("venom").setup()' })
 
+	-- Automatic highlighting of word under cursor
+	use("RRethy/vim-illuminate")
+
 	-- Tree-like view of Symbols
 	use("simrat39/symbols-outline.nvim")
 
@@ -202,6 +205,6 @@ return require("packer").startup(function(use)
 		"nvim-neorg/neorg",
 		ft = "norg",
 		after = "nvim-treesitter",
-		run = ":Neorg sync-parsers",
+		-- run = ":Neorg sync-parsers",
 	})
 end)
