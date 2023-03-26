@@ -29,6 +29,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", " dn", vim.diagnostic.goto_next, opts)
 	vim.keymap.set("n", " dp", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", " dl", "<cmd>Telescope diagnostics<CR>", opts)
+	vim.keymap.set("n", "<C-c>", vim.lsp.buf.code_action, opts)
 	-- vim.keymap.set("n", " rn", "<cmd>Lspsaga rename<CR>", opts)
 	vim.keymap.set("n", " rn", vim.lsp.buf.rename, opts)
 end
@@ -82,6 +83,26 @@ local function get_python_path(workspace)
 	-- Fallback to system Python.
 	return vim.fn.exepath("python3") or vim.fn.exepath("python") or "python"
 end
+
+-- Configure `ruff-lsp`.
+local configs = require("lspconfig.configs")
+if not configs.ruff_lsp then
+	configs.ruff_lsp = {
+		default_config = {
+			cmd = { "ruff-lsp" },
+			filetypes = { "python" },
+			root_dir = require("lspconfig").util.find_git_ancestor,
+			init_options = {
+				settings = {
+					args = {},
+				},
+			},
+		},
+	}
+end
+require("lspconfig").ruff_lsp.setup({
+	on_attach = on_attach,
+})
 
 require("lspconfig").pyright.setup({
 	on_attach = function()
