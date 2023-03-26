@@ -13,6 +13,9 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.black,
+		formatting.prettier.with({
+			filetypes = { "html", "json", "yaml", "markdown" },
+		}),
 		-- formatting.clang_format.with({
 		-- 	disabled_filetypes = { "java" },
 		-- }),
