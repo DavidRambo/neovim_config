@@ -9,6 +9,8 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
+local navbuddy = require("nvim-navbuddy")
+
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- enable keybindings for lsp server
@@ -32,6 +34,8 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<C-c>", vim.lsp.buf.code_action, opts)
 	-- vim.keymap.set("n", " rn", "<cmd>Lspsaga rename<CR>", opts)
 	vim.keymap.set("n", " rn", vim.lsp.buf.rename, opts)
+
+	navbuddy.attach(client, bufnr)
 end
 
 vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])

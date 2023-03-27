@@ -101,6 +101,9 @@ n_remap("<leader>sr", "<cmd>:Telescope resume<CR>")
 vim.keymap.set("n", "<leader>sb", builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
 
+-- Navbuddy
+n_remap("<leader>n", "<cmd>:Navbuddy<CR>")
+
 -- Filter Diagnostic Severity
 n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
 n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.WARN)<CR>")
