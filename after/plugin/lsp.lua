@@ -85,24 +85,25 @@ local function get_python_path(workspace)
 end
 
 -- Configure `ruff-lsp`.
-local configs = require("lspconfig.configs")
-if not configs.ruff_lsp then
-	configs.ruff_lsp = {
-		default_config = {
-			cmd = { "ruff-lsp" },
-			filetypes = { "python" },
-			root_dir = require("lspconfig").util.find_git_ancestor,
-			init_options = {
-				settings = {
-					args = {},
-				},
-			},
-		},
-	}
-end
-require("lspconfig").ruff_lsp.setup({
-	on_attach = on_attach,
-})
+-- local configs = require("lspconfig.configs")
+-- if not configs.ruff_lsp then
+-- 	configs.ruff_lsp = {
+-- 		default_config = {
+-- 			cmd = { "ruff-lsp" },
+-- 			filetypes = { "python" },
+-- 			root_dir = require("lspconfig").util.find_git_ancestor,
+-- 			init_options = {
+-- 				settings = {
+-- 					args = {},
+-- 				},
+-- 			},
+-- 		},
+-- 	}
+-- end
+-- require("lspconfig").ruff_lsp.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 require("lspconfig").pyright.setup({
 	on_attach = function()
