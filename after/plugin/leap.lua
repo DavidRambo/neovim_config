@@ -1,6 +1,6 @@
 local status, leap = pcall(require, "leap")
 if not status then
-	return
+  return
 end
 
 -- leap.setup()
