@@ -2,29 +2,44 @@ vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true 
 
 -- For conciseness
 local n_remap = function(lhs, rhs)
-	vim.api.nvim_set_keymap("n", lhs, rhs, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", lhs, rhs, { noremap = true, silent = true })
 end
 
 local i_remap = function(lhs, rhs)
-	vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("i", lhs, rhs, { noremap = true, silent = true })
 end
 
 local v_remap = function(lhs, rhs)
-	vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", lhs, rhs, { noremap = true, silent = true })
 end
 
 -- map leader to space
 vim.g.mapleader = " "
 
 -- handling word wrap
-vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Up>", "v:count == 0 ? 'g<Up>' : '<Up>'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap(
-	"n",
-	"<Down>",
-	"v:count == 0 ? 'g<Down>' : '<Down>'",
-	{ noremap = true, expr = true, silent = true }
+  "n",
+  "k",
+  "v:count == 0 ? 'gk' : 'k'",
+  { noremap = true, expr = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "j",
+  "v:count == 0 ? 'gj' : 'j'",
+  { noremap = true, expr = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<Up>",
+  "v:count == 0 ? 'g<Up>' : '<Up>'",
+  { noremap = true, expr = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<Down>",
+  "v:count == 0 ? 'g<Down>' : '<Down>'",
+  { noremap = true, expr = true, silent = true }
 )
 
 n_remap("<C-d>", "<C-d>zz")
@@ -105,8 +120,14 @@ n_remap("<leader>ft", ":TodoTelescope<CR>")
 n_remap("<leader>n", "<cmd>:Navbuddy<CR>")
 
 -- Filter Diagnostic Severity
-n_remap("<leader>df", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>")
-n_remap("<leader>dw", "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.WARN)<CR>")
+n_remap(
+  "<leader>df",
+  "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.ERROR)<CR>"
+)
+n_remap(
+  "<leader>dw",
+  "<cmd>:lua require('user.filter-diagnostics').set_level(vim.diagnostic.severity.WARN)<CR>"
+)
 
 -- Zen-mode
 n_remap("<leader>tz", "<cmd>ZenMode<CR>")
