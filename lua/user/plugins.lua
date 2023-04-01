@@ -117,7 +117,7 @@ return require("packer").startup(function(use)
   -- use("phaazon/hop.nvim")
   use("ggandor/leap.nvim") -- sneak attack!
   -- use("fedepujol/move.nvim") -- C-j/k to move lines
-  use("DavidRambo/tabout.nvim") -- tab out of those pairs!
+  use("abecodes/tabout.nvim") -- tab out of those pairs!
   use("echasnovski/mini.move") -- move lines and Ctrl-v blocks
   use("echasnovski/mini.bracketed")
 
@@ -164,11 +164,6 @@ return require("packer").startup(function(use)
 		end,
 	}) ]]
   use("onsails/lspkind.nvim")
-  use({
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-  })
-  use("folke/zen-mode.nvim")
 
   -- Completion
   use({
@@ -182,6 +177,12 @@ return require("packer").startup(function(use)
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
   })
+
+  use({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
+  use("folke/zen-mode.nvim")
 
   -- To integrate Poetry with the Python LSP
   -- use({

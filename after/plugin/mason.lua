@@ -21,7 +21,7 @@ mason_lspconfig.setup({
     "html",
     "cssls",
     "lua_ls",
-    "pylsp",
+    -- "pylsp",
     "clangd",
     "sqlls",
     -- "jdtls",

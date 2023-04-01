@@ -3,8 +3,6 @@ if not which_key_setup then
   return
 end
 
-wk.setup()
-
 wk.register({
   -- {
   -- 	["<leader><leader>"] = {
@@ -85,3 +83,5 @@ wk.register({
     u = { "Task Undone" },
   },
 })
+
+wk.setup()

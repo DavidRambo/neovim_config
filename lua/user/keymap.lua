@@ -115,6 +115,13 @@ n_remap("<leader>sd", "<cmd>:Telescope lsp_definitions<CR>")
 n_remap("<leader>sr", "<cmd>:Telescope resume<CR>")
 vim.keymap.set("n", "<leader>sb", builtin.current_buffer_fuzzy_find, {})
 n_remap("<leader>ft", ":TodoTelescope<CR>")
+vim.keymap.set("n", "<leader>/", function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    winblend = 10,
+    previewer = false,
+  }))
+end, { desc = "[/] Fuzzily search in current buffer" })
 
 -- Navbuddy
 n_remap("<leader>n", "<cmd>:Navbuddy<CR>")
