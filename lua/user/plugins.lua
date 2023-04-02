@@ -184,6 +184,8 @@ return require("packer").startup(function(use)
   })
   use("folke/zen-mode.nvim")
 
+  use("karb94/neoscroll.nvim")
+
   -- To integrate Poetry with the Python LSP
   -- use({
   -- 	"karloskar/poetry-nvim",
