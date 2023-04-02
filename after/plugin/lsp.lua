@@ -17,6 +17,15 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
+  vim.diagnostic.config({
+    -- virtual_text = {
+    --   source = "always", -- Or "if_many"
+    -- },
+    float = {
+      source = "always", -- Or "if_many"
+    },
+  })
+
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   -- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
   -- vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
