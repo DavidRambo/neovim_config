@@ -1,6 +1,6 @@
+require("user.plugins")
 require("user.set")
 require("user.keymap")
-require("user.plugins")
 -- require("user.globals")
 require("user.colors.catppuccin")
 require("user.filter-diagnostics").set_level(vim.diagnostic.severity.ERROR)

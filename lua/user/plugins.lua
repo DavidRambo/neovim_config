@@ -1,57 +1,59 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
-local status, packer = pcall(require, "packer")
-if not status then
-  return
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/wbthomason/packer.nvim",
+      install_path,
+    })
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
 end
 
-packer.init({
-  display = {
-    open_fn = require("packer.util").float,
-  },
-})
+local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
   -- colorschemes
-  use("navarasu/onedark.nvim")
-  use({
-    "NTBBloodbath/doom-one.nvim",
-    setup = function()
-      vim.g.doom_one_cursor_coloring = false
-      vim.g.doom_one_terminal_colors = true
-      vim.g.doom_one_italic_comments = true
-      vim.g.doom_one_enable_treesitter = true
-      vim.g.doom_one_diagnostics_text_color = false
-      vim.g.doom_one_transparent_background = false
-      -- Plugins integration
-      vim.g.doom_one_plugin_neorg = true
-      vim.g.doom_one_plugin_barbar = false
-      vim.g.doom_one_plugin_telescope = true
-      vim.g.doom_one_plugin_neogit = false
-      vim.g.doom_one_plugin_nvim_tree = true
-      vim.g.doom_one_plugin_dashboard = true
-      vim.g.doom_one_plugin_startify = false
-      vim.g.doom_one_plugin_whichkey = true
-      vim.g.doom_one_plugin_indent_blankline = false
-      vim.g.doom_one_plugin_vim_illuminate = true
-      vim.g.doom_one_plugin_lspsaga = true
-    end,
-    -- config = function()
-    -- 	vim.cmd.colorscheme("doom-one")
-    -- end,
-  })
-  use({
-    "rose-pine/neovim",
-    as = "rose-pine",
-  })
+  --   use("navarasu/onedark.nvim")
+  --   use({
+  --     "NTBBloodbath/doom-one.nvim",
+  --     setup = function()
+  --       vim.g.doom_one_cursor_coloring = false
+  --       vim.g.doom_one_terminal_colors = true
+  --       vim.g.doom_one_italic_comments = true
+  --       vim.g.doom_one_enable_treesitter = true
+  --       vim.g.doom_one_diagnostics_text_color = false
+  --       vim.g.doom_one_transparent_background = false
+  --       -- Plugins integration
+  --       vim.g.doom_one_plugin_neorg = true
+  --       vim.g.doom_one_plugin_barbar = false
+  --       vim.g.doom_one_plugin_telescope = true
+  --       vim.g.doom_one_plugin_neogit = false
+  --       vim.g.doom_one_plugin_nvim_tree = true
+  --       vim.g.doom_one_plugin_dashboard = true
+  --       vim.g.doom_one_plugin_startify = false
+  --       vim.g.doom_one_plugin_whichkey = true
+  --       vim.g.doom_one_plugin_indent_blankline = false
+  --       vim.g.doom_one_plugin_vim_illuminate = true
+  --       vim.g.doom_one_plugin_lspsaga = true
+  --     end,
+  --     -- config = function()
+  --     -- 	vim.cmd.colorscheme("doom-one")
+  --     -- end,
+  --   })
+  --   use({
+  --     "rose-pine/neovim",
+  --     as = "rose-pine",
+  --   })
   use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- use("glepnir/dashboard-nvim")
@@ -219,4 +221,8 @@ return require("packer").startup(function(use)
     after = "nvim-treesitter",
     -- run = ":Neorg sync-parsers",
   })
+
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)
