@@ -33,6 +33,6 @@ mason_null_ls.setup({
     "stylua",
     "clang_format",
     "black",
-    "flake8",
+    "ruff",
   },
 })

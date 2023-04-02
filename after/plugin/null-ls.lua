@@ -22,7 +22,7 @@ null_ls.setup({
     -- 	disabled_filetypes = { "java" },
     -- }),
     -- diagnostics.flake8,
-    diagnostics.mypy,
+    -- diagnostics.mypy, -- pyright also serves as a static type checker
     --[[ diagnostics.pylint.with({
 			diagnostic_config = {
 				underline = false,
